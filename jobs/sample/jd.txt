@@ -1,0 +1,24 @@
+Job Title: Senior Azure Data Engineer
+Location: Bengaluru, India (Hybrid)
+
+Requirements:
+- Must have 4+ years building data pipelines on Microsoft Azure
+- Required: strong hands-on Azure Data Factory (ADF) and Azure Databricks
+- Must have advanced PySpark and SQL for large-scale transformations
+- Required experience with Delta Lake, Medallion Architecture and ADLS Gen2
+- Proven experience with Azure Synapse Analytics and Microsoft Fabric
+- Hands-on with Snowflake and Azure SQL Database is required
+- Must have CI/CD experience using Azure DevOps and Terraform
+- Required: strong data modeling (Star Schema, Kimball) and Data Warehousing
+- Experience with Apache Airflow orchestration
+
+Nice to have:
+- Familiarity with Power BI and DAX
+- Exposure to Kafka and Event Hubs for streaming
+- Preferred: Databricks Certified Data Engineer
+- A plus: Python for MLOps and Generative AI pipelines
+- Good to have: dbt and Great Expectations for data quality
+
+You will:
+- Own the Lakehouse platform and mentor junior engineers
+- Improve pipeline reliability, SLA compliance and cost optimization in Azure

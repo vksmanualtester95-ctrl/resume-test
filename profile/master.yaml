@@ -1,0 +1,109 @@
+# Vicky Kumar - master profile. THE source of truth.
+# Rule: nothing appears on a resume unless it appears here.
+# `evidence` = how you would prove it in an interview. Never printed.
+
+contact:
+  name: Vicky Kumar
+  headline: Azure Data Engineer
+  location: Bhubaneswar, Odisha, India
+  open_to: [Pan India (open to relocate anywhere), Remote]
+  # phone and email intentionally omitted from the public repo copy.
+  # They are read from a LOCAL-ONLY override (profile/master.local.yaml)
+  # that is gitignored, so scripts like check.py / gap.py still work locally.
+  linkedin: linkedin.com/in/ervicky95
+  github: github.com/ervicky95
+
+job_search:
+  target_titles: [Azure Data Engineer, Senior Data Engineer, Data Engineer,
+                  Analytics Engineer, Databricks Engineer]
+  total_experience_years: 4.4          # Mar 2022 -> Aug 2026
+  notice_period: ""                    # TODO fill - asked on every form
+  current_ctc: ""                      # TODO - never on resume, needed for forms
+  expected_ctc: ""                     # TODO - never on resume
+  knockout_answers:
+    authorised_to_work_india: "Yes"
+    willing_to_relocate: "Yes"
+    open_to_hybrid: "Yes"
+
+skills:
+  languages: [SQL, Python, PySpark, Spark SQL]
+  azure: [Azure Data Factory (ADF), Azure Databricks,
+          Azure Data Lake Storage Gen2 (ADLS Gen2), Azure Synapse Analytics,
+          Microsoft Fabric, Delta Lake, Azure DevOps]
+  engineering: [ETL/ELT, Data Ingestion, Data Integration, Data Lakehouse,
+                Medallion Architecture, Data Warehousing, Data Modeling]
+  tools: [Apache Airflow, dbt, n8n, Git, CI/CD, ServiceNow]
+  genai_tooling: [Claude Code, OpenAI Codex]   # tooling only, never hands-on ML
+  reliability: [Data Quality Validation, Schema Drift Handling, Error Handling,
+                Performance Tuning, Monitoring, RBAC, SLA Management]
+  # --- gaps seen in senior Azure DE postings. Mark true only if real. ---
+  gaps_to_close:
+    - {skill: Snowflake,        have: false, note: "appears in many senior JDs"}
+    - {skill: Terraform,        have: false, note: "IaC, common requirement"}
+    - {skill: Star Schema / Kimball, have: false, note: "data modeling - HIGH value, learnable fast"}
+    - {skill: Power BI / DAX,   have: false, note: "frequent nice-to-have"}
+    - {skill: Kafka / Event Hubs, have: false, note: "streaming"}
+    - {skill: Great Expectations, have: false, note: "data quality tooling"}
+
+experience:
+  - title: Azure Data Engineer
+    company: Tata Consultancy Services
+    client: GE HealthCare - Treasury
+    location: India
+    start: Sep 2023
+    end: Present
+    bullets:
+      - text: "Built and own 10+ ETL/ELT pipelines in ADF and Databricks landing Bloomberg, ODP and internal treasury feeds into ADLS Gen2 for 3 downstream systems."
+        evidence: "pipeline inventory in ADF; downstream consumer list"
+      - text: "Cut incident resolution from 3-4 hours to 30 minutes (83%) via structured logging, alerting and a triage runbook."
+        evidence: "ServiceNow MTTR before/after"
+      - text: "Maintained a 99.9% SLA across 10+ production pipelines using validation checkpoints and event-based triggers."
+        evidence: "SLA dashboard"
+      - text: "Reusable PySpark modules for incremental load and schema drift; new-source onboarding effort down 25%."
+        evidence: "TODO - real before/after in days?"
+      - text: "Tuned Delta Lake partitioning, Z-ordering and SQL joins; analytical performance up 40%."
+        evidence: "TODO - real query runtime before/after?"
+      - text: "Azure DevOps CI/CD for ADF pipelines and Databricks notebooks across dev, QA, prod."
+        evidence: "release pipeline config"
+
+  - title: ETL Support Engineer (BFSI)
+    company: Tata Consultancy Services
+    location: India
+    start: Mar 2022
+    end: Aug 2023
+    bullets:
+      - text: "Monitored 15+ production ETL pipelines for BFSI reporting, owning the overnight batch window."
+        evidence: "shift roster, pipeline list"
+      - text: "Resolved 100+ pipeline failures via SQL root-cause analysis and ServiceNow incident management."
+        evidence: "ServiceNow ticket count"
+      - text: "Ran data validation and reconciliation across source and target datasets before each reporting cycle."
+        evidence: "reconciliation reports"
+
+projects:
+  - name: Urban Transit Medallion Pipeline
+    stack: [ADF, Databricks, PySpark, Delta Lake, ADLS Gen2]
+    link: github.com/ervicky95/urban-transit-medallion-pipeline
+    bullets:
+      - text: "1M+ records through Bronze/Silver/Gold with PySpark transforms; query performance up 40%."
+  - name: Automated ETL and Job-Alert Pipeline
+    stack: [Python, n8n, REST API]
+    link: github.com/ervicky95/n8n-data-pipeline-job-automation
+    bullets:
+      - text: "REST API and RSS ingestion with retry logic, scheduling and failure alerts; manual effort down 60%."
+        evidence: "TODO - hours per week before/after?"
+
+certifications:
+  - {name: "Microsoft Certified: Fabric Data Engineer Associate (DP-700)", status: done}
+  - {name: "Databricks Certified Data Engineer Associate", status: in progress}
+  - {name: "Big Data Engineering Bootcamp (Azure & GCP)", status: done}
+  - {name: "Generative AI for Leaders", status: done}
+
+education:
+  - {degree: "Executive MBA in Data Science", school: "IIT Patna", years: "2025 - 2027", status: ongoing}
+  - {degree: "B.Tech, Computer Science and Engineering", school: "Gandhi Engineering College, Bhubaneswar", years: "2016 - 2020"}
+
+open_questions:            # answer these, then delete them
+  - "2020 graduation to Mar 2022 first role - what were you doing? Have a one-line answer ready; recruiters check date gaps first."
+  - "Notice period?"
+  - "Team size you work in at GE HealthCare?"
+  - "Data volume per day/run in the treasury pipelines?"

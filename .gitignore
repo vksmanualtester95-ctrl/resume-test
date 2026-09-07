@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Claude session/config (local-only)
+.claude/
+
+# MCP config (local-only — may contain tokens)
+.mcp.json
+
+# Personal artifacts — NEVER push these
+Profile Linkedin.pdf
+input/
+output/
+
+# Local-only contact override (phone, email) — never commit
+profile/master.local.yaml
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+Thumbs.db

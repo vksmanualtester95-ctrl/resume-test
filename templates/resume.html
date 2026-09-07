@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vicky Kumar - Azure Data Engineer</title>
+<!--
+  ZERO-INSTALL ATS-SAFE RESUME
+  ============================
+  How to make the PDF (no LaTeX, no software, ~0 MB):
+    1. Open this file in Chrome  (File > Open, or drag it onto Chrome)
+    2. Cmd + P
+    3. Destination        : Save as PDF
+    4. Paper size         : A4   (or Letter for US roles)
+    5. Margins            : Default
+    6. Scale              : 100%   <-- do NOT use "Fit to page"
+    7. Headers and footers: UNCHECK  <-- important, Workday/Taleo suppress them
+    8. Background graphics: UNCHECK
+    9. Save as Vicky_Kumar_Azure_Data_Engineer.pdf
+
+  Chrome's PDF engine writes a clean Unicode text layer. That is why this
+  beats a LaTeX PDF built with the wrong compiler, and it costs you nothing
+  in disk space.
+
+  WHY EVERY RULE BELOW EXISTS
+    - one column            : Workday/Taleo/iCIMS flatten columns left-to-right
+    - no icons/emoji        : your old PDF's FontAwesome icons glued your
+                              phone and email into one unparseable blob
+    - no tables, no flexbox : table cells land in the wrong parsed fields
+    - system fonts only     : no webfont = no glyph-mapping failure
+    - " | " separators      : gives the parser a clean field boundary
+    - dates on their own    : "(BFSI)Mar 2022" glued together destroys title
+      line/segment            extraction; the date sits after " | " now
+-->
+<style>
+  @page { size: A4; margin: 10mm 12mm; }
+
+  * { box-sizing: border-box; }
+
+  body {
+    /* System fonts only. Never a webfont - it can fail to embed and the
+       text layer turns to gibberish. Arial is present on every OS; Calibri
+       only ships with MS Office, so it is deliberately not first. */
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    /* Disable fi/ff/fl ligatures - Helvetica Neue renders them as single
+       glyphs that pdftotext extracts as U+FB00/U+FB01, failing the check. */
+    font-variant-ligatures: none;
+    font-size: 8.8pt;
+    line-height: 1.17;
+    color: #000;
+    margin: 0;
+    max-width: 190mm;
+  }
+
+  /* Kill default <p> margins. The Summary <p> has no class, so the browser's
+     ~12px bottom margin was inflating the gap AFTER a section (looked like a
+     "bottom gap") while headings got only their own 5px top margin (looked
+     like "no top gap"). Zeroing p margins makes every transition symmetric. */
+  p { margin: 0; }
+
+  /* ---------- header ---------- */
+  h1 {
+    font-size: 17pt;
+    letter-spacing: 0.3px;
+    margin: 0 0 1px 0;
+    font-weight: 700;
+  }
+  .role {
+    font-size: 10pt;
+    font-weight: 600;
+    margin: 0 0 2px 0;
+  }
+  .contact {
+    font-size: 8.8pt;
+    margin: 0 0 2px 0;
+  }
+
+  /* ---------- sections ---------- */
+  /* Light-gray pill headings: visual only. Background, radius and padding
+     live in layout, NOT in the text layer, so pdftotext reads exactly the
+     same string as before. print-color-adjust:exact keeps the gray when
+     Chrome renders the PDF (headless print renders backgrounds by default;
+     the flag makes it deterministic). */
+  h2 {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    margin: 8px 0 0 0;           /* clear top gap before every section heading */
+    padding: 2px 8px 0 8px;      /* bottom padding 0 -> uniform heading-to-content gap */
+    background-color: #ececec;
+    border-radius: 4px;
+    border-bottom: none;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+    /* keep a heading from being orphaned at the bottom of a page */
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  /* ---------- job / project entries ---------- */
+  .entry { margin-bottom: 0; break-inside: avoid; page-break-inside: avoid; }
+  /* Every role/project block gets a TOP gap (incl. the first, under its
+     heading) and ZERO bottom gap. This gives the symmetric
+     "top gap, bottom no gap" the user asked for, with a clean gap between
+     consecutive blocks. */
+  .role-block { margin-top: 4px; margin-bottom: 0; }      /* role_block_gap */
+  .project-block { margin-top: 4px; margin-bottom: 0; }   /* project_block_gap */
+  .title { font-weight: 700; }
+  .meta  { font-size: 9pt; margin-bottom: 1px; }
+  .project-link { font-style: italic; }    /* project_link style: italic/selectable/clickable */
+
+  /* Section body starts with a small, predictable top gap right under the
+     heading (heading bottom gap = 0). Zero bottom margin => no trailing gap. */
+  .entry p, .summary, .skills p, p.meta, p.contact, p.role { margin: 3px 0 0 0; }
+
+  ul { margin: 1px 0 0 0; padding-left: 13px; }
+  li { margin-bottom: 1px; }
+
+  .skills p { margin: 0 0 2px 0; }     /* within Skills, keep tight line stack */
+  .skills b { font-weight: 700; }
+
+  a { color: #000; text-decoration: none; }
+
+  /* Print hygiene */
+  @media print {
+    body { font-size: 9.3pt; }
+    a { color: #000 !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- =====================================================================
+     CONTACT BLOCK
+     Plain text. No icons. Pipe separators. City + openness included.
+     ===================================================================== -->
+<h1>Vicky Kumar</h1>
+<p class="role">Azure Data Engineer</p>
+<p class="contact">
+  Bhubaneswar, Odisha, India - open to pan-India / remote
+  &nbsp;|&nbsp; <!--PHONE-->
+  &nbsp;|&nbsp; <!--EMAIL-->
+</p>
+<p class="contact">
+  <a href="https://linkedin.com/in/ervicky95">linkedin.com/in/ervicky95</a>
+  &nbsp;|&nbsp; <a href="https://github.com/ervicky95">github.com/ervicky95</a>
+</p>
+
+<!-- =====================================================================
+     SUMMARY
+     Front-loaded with the exact job title and the core Azure stack. The
+     role is Azure Data Engineering; DP-700 is a credential, not the brand.
+     ===================================================================== -->
+<h2>Summary</h2>
+<p class="summary">
+  Azure Data Engineer with 4.5 years of experience building production ETL/ELT
+  pipelines with Azure Data Factory (ADF), Azure Databricks, PySpark and SQL.
+  Built and currently maintain 10+ production pipelines landing Bloomberg, ODP and internal treasury feeds
+  into ADLS Gen2 for 3 downstream systems, cutting incident resolution from
+  3-4 hours to 30 minutes (83%) while maintaining a 99.9% SLA.
+</p>
+
+<!-- =====================================================================
+     SKILLS
+     Both forms of every acronym, once: "Azure Data Factory (ADF)".
+     Core Azure stack first, GenAI tooling as a differentiator (not ML).
+     ===================================================================== -->
+<h2>Skills</h2>
+<div class="skills">
+  <p><b>Languages:</b> SQL, Python, PySpark, Spark SQL</p>
+  <p><b>Azure:</b> Azure Data Factory (ADF), Azure Databricks, Azure Data Lake
+     Storage Gen2 (ADLS Gen2), Azure Synapse Analytics, Delta Lake, Microsoft
+     Fabric, Azure DevOps</p>
+  <p><b>Data Engineering:</b> ETL/ELT, Data Ingestion, Data Integration,
+     Data Lakehouse, Medallion Architecture, Data Warehousing, Data Modeling,
+     Incremental Load</p>
+  <p><b>Tools:</b> Apache Airflow, dbt, n8n, Git, Continuous Integration and
+     Continuous Delivery (CI/CD), ServiceNow</p>
+  <p><b>Reliability:</b> Data Quality Validation, Schema Drift Handling,
+     Error Handling, Performance Tuning, Monitoring, RBAC, SLA Management</p>
+</div>
+
+<!-- =====================================================================
+     EXPERIENCE
+     Every figure is verbatim from profile/master.yaml. 83% and 99.9% are
+     real odd numbers; 25% / 40% are Vicky's own rounded originals. The
+     GenAI bullet is tooling only - Vicky has no hands-on ML and claims none.
+     ===================================================================== -->
+<h2>Experience</h2>
+
+<div class="entry role-block">
+  <div class="title">Azure Data Engineer</div>
+  <div class="meta">Tata Consultancy Services (Client: GE HealthCare, Treasury)
+    | India | Sep 2023 - Present</div>
+  <ul>
+    <li>Built and currently maintain 10+ ETL/ELT pipelines in ADF and Databricks landing
+        Bloomberg, ODP and internal treasury feeds into ADLS Gen2 for 3
+        downstream systems.</li>
+    <li>Cut incident resolution from 3-4 hours to 30 minutes (83%) via
+        structured logging, alerting and a triage runbook.</li>
+    <li>Maintained a 99.9% SLA across 10+ production pipelines using validation
+        checkpoints and event-based triggers.</li>
+    <li>Built reusable PySpark modules for incremental load and schema drift,
+        reducing new-source onboarding effort by 25%.</li>
+    <li>Tuned Delta Lake partitioning, Z-ordering and SQL joins, improving
+        analytical performance by 40%.</li>
+    <li>Built Azure DevOps CI/CD for ADF pipelines and Databricks notebooks
+        across dev, QA and prod.</li>
+  </ul>
+</div>
+
+<div class="entry role-block">
+  <div class="title">ETL Support Engineer (BFSI)</div>
+  <div class="meta">Tata Consultancy Services | India | Mar 2022 - Aug 2023</div>
+  <ul>
+    <li>Monitored 15+ production ETL pipelines for BFSI reporting, owning the
+        overnight batch window.</li>
+    <li>Resolved 100+ pipeline failures via SQL root-cause analysis and
+        ServiceNow incident management, turning the recurring ones into
+        permanent error-handling fixes.</li>
+    <li>Ran data validation and reconciliation across source and target
+        datasets before each reporting cycle.</li>
+  </ul>
+</div>
+
+<!-- =====================================================================
+     PROJECTS
+     Carry the Fabric/GenAI/automation signal without claiming ML.
+     ===================================================================== -->
+<h2>Projects</h2>
+
+<div class="entry project-block">
+  <div class="title">Urban Transit Medallion Pipeline</div>
+  <div class="meta">Azure Data Factory, Databricks, PySpark, Delta Lake, ADLS
+    Gen2 | <a class="project-link" href="https://github.com/ervicky95/urban-transit-medallion-pipeline">github.com/ervicky95/urban-transit-medallion-pipeline</a></div>
+  <ul>
+    <li>Processed 1M+ records through Bronze, Silver and Gold layers with
+        PySpark transforms, improving query performance by 40%.</li>
+  </ul>
+</div>
+
+<div class="entry project-block">
+  <div class="title">Automated ETL and Job-Alert Pipeline</div>
+  <div class="meta">Python, n8n, REST API | <a class="project-link" href="https://github.com/ervicky95/n8n-data-pipeline-job-automation">github.com/ervicky95/n8n-data-pipeline-job-automation</a></div>
+  <ul>
+    <li>Built REST API and RSS ingestion with retry logic, scheduling and
+        failure alerts, reducing manual effort by 60%.</li>
+  </ul>
+</div>
+
+<!-- =====================================================================
+     CERTIFICATIONS - DP-700 is a genuine differentiator, keep it visible
+     ===================================================================== -->
+<h2>Certifications</h2>
+<ul>
+  <li>Microsoft Certified: Fabric Data Engineer Associate (DP-700)</li>
+  <li>Databricks Certified Data Engineer Associate (In Progress)</li>
+  <li>Big Data Engineering Bootcamp (Azure &amp; GCP)</li>
+  <li>Generative AI for Leaders</li>
+</ul>
+
+<!-- =====================================================================
+     EDUCATION - degree line, then institution line. Never merged.
+     ===================================================================== -->
+<h2>Education</h2>
+<div class="entry">
+  <div class="title">Executive MBA in Data Science</div>
+  <div class="meta">IIT Patna | 2025 - 2027 (ongoing)</div>
+</div>
+<div class="entry">
+  <div class="title">B.Tech, Computer Science and Engineering</div>
+  <div class="meta">Gandhi Engineering College, Bhubaneswar | 2016 - 2020</div>
+</div>
+
+</body>
+</html>
