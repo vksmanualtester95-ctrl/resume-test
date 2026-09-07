@@ -1,0 +1,10 @@
+# LOCAL-ONLY template. Copy this file to `master.local.yaml` and
+# fill in your real values. `master.local.yaml` is gitignored.
+#
+# scripts/merge_contact.py reads from master.local.yaml and fills
+# the <!--PHONE--> and <!--EMAIL--> placeholders in
+# templates/resume.html before you export.
+
+contact:
+  phone: "+91 00000 00000"
+  email: you@example.com

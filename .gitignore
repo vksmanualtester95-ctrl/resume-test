@@ -9,19 +9,19 @@ __pycache__/
 *$py.class
 *.so
 
-# Claude session/config (local-only)
+# Claude session/config (local-only — generated per session)
 .claude/
 
-# MCP config (local-only — may contain tokens)
-.mcp.json
-
-# Personal artifacts — NEVER push these
+# Personal artifacts — NEVER push these (contain phone + email)
 Profile Linkedin.pdf
 input/
 output/
 
 # Local-only contact override (phone, email) — never commit
 profile/master.local.yaml
+# But the schema example IS committed:
+# profile/master.local.yaml.example
+
 
 # Editor / OS
 .vscode/

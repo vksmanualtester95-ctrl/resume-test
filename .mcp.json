@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "research": {
+      "type": "stdio",
+      "command": "/Users/vickykumar/All Claude project/Resume/.claude/deps/npm/node_modules/.bin/duckduckgo-mcp-server",
+      "args": [],
+      "env": {}
+    },
+    "fetch": {
+      "type": "stdio",
+      "command": "/Users/vickykumar/All Claude project/Resume/.claude/deps/uv/uvx",
+      "args": [
+        "mcp-server-fetch"
+      ],
+      "env": {
+        "UV_TOOL_DIR": "/Users/vickykumar/All Claude project/Resume/.claude/deps/uv/tools",
+        "UV_CACHE_DIR": "/Users/vickykumar/All Claude project/Resume/.claude/deps/uv/cache"
+      }
+    },
+    "seqthink": {
+      "type": "stdio",
+      "command": "/Users/vickykumar/All Claude project/Resume/.claude/deps/npm/node_modules/.bin/mcp-server-sequential-thinking",
+      "args": [],
+      "env": {}
+    },
+    "parallel": {
+      "type": "http",
+      "url": "https://search.parallel.ai/mcp"
+    }
+  }
+}
